@@ -1,0 +1,66 @@
+
+body{
+
+/*background-color: #003366;*/
+
+/* background-color: #6B9BC3; */
+
+	font-size:14px;
+/* 	font-weight:bolder; */
+	font-family:"TW cen MT";
+	margin: 0px;
+	padding: 0px;
+	background-repeat: repeat-x,repeat-y;
+
+}
+
+.bold{
+	font-weight:bolder;
+}
+
+table.main{
+	/*background-color:#D2E7F4;*/
+	background-color:#B5CDE1;
+	color:black;
+	border:1px solid black;
+	padding: 0px;
+	spacing:0px;
+	margin-left:auto; 
+    	margin-right:auto;
+	border-radius:10px;
+
+}
+table.header{
+	background-color:black;
+	color:white;
+	border:1px solid black;
+	padding: 0px;
+	spacing:0px;
+	margin-left:auto; 
+    	margin-right:auto;
+	border-radius:5px;
+font-family:candara;
+font-size:18px;
+font-weight:bolder;
+
+}
+
+table.menu{
+	/*background-color:#D2E7F4;*/
+	/* background-color:#B5CDE1; */
+	background-color:#006699;
+	color:white;
+	border:1px solid black;
+	padding: 0px;
+	spacing:0px;
+	margin-left:auto; 
+    	margin-right:auto;
+	border-radius:10px;
+font-weight:bolder;
+font-size:18px;
+font-style:italic
+}
+INPUT, select{
+color: white; background-color: #87AEC5;border-color:black;
+border:1;border-radius:5px;
+}
