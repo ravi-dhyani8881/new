@@ -226,12 +226,47 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                            echo '<ol id="log">';                                           
                                            echo '<li id="SWFUpload_0_0" class="success">';
                                            echo 'File: <em>Lighthouse.jpg</em>';
-                                           echo ' <p class="status"> ';
-                                               
+                                           echo ' <p class="status"> ';                                               
                                            echo ' <a target="_blank" href="uploads/Lighthouse.jpg">view »</a>';
                                            echo ' </p><span class="cancel" style="display: none;">&nbsp;</span>';
                                            echo '</li>';
                                            echo '</ol>';                                           
+                                       }if($other_row['attachment2']!=NULL){
+                                           echo '<ol id="log">';                                           
+                                           echo '<li id="SWFUpload_0_1" class="success">';
+                                           echo 'File: <em>Lighthouse.jpg</em>';
+                                           echo ' <p class="status"> ';                                               
+                                           echo ' <a target="_blank" href="uploads/Lighthouse.jpg">view »</a>';
+                                           echo ' </p><span class="cancel" style="display: none;">&nbsp;</span>';
+                                           echo '</li>';
+                                           echo '</ol>'; 
+                                       }if($other_row['attachment3']!=NULL){
+                                           echo '<ol id="log">';                                           
+                                           echo '<li id="SWFUpload_0_2" class="success">';
+                                           echo 'File: <em>Lighthouse.jpg</em>';
+                                           echo ' <p class="status"> ';                                               
+                                           echo ' <a target="_blank" href="uploads/Lighthouse.jpg">view »</a>';
+                                           echo ' </p><span class="cancel" style="display: none;">&nbsp;</span>';
+                                           echo '</li>';
+                                           echo '</ol>'; 
+                                       }if($other_row['attachment4']!=NULL){
+                                           echo '<ol id="log">';                                           
+                                           echo '<li id="SWFUpload_0_3" class="success">';
+                                           echo 'File: <em>Lighthouse.jpg</em>';
+                                           echo ' <p class="status"> ';                                               
+                                           echo ' <a target="_blank" href="uploads/Lighthouse.jpg">view »</a>';
+                                           echo ' </p><span class="cancel" style="display: none;">&nbsp;</span>';
+                                           echo '</li>';
+                                           echo '</ol>'; 
+                                       }if($other_row['attachment5']!=NULL){
+                                           echo '<ol id="log">';                                           
+                                           echo '<li id="SWFUpload_0_4" class="success">';
+                                           echo 'File: <em>Lighthouse.jpg</em>';
+                                           echo ' <p class="status"> ';                                               
+                                           echo ' <a target="_blank" href="uploads/Lighthouse.jpg">view »</a>';
+                                           echo ' </p><span class="cancel" style="display: none;">&nbsp;</span>';
+                                           echo '</li>';
+                                           echo '</ol>'; 
                                        }
                                        
                                        
