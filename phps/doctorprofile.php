@@ -253,11 +253,11 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
             $result = mysql_query("SELECT * FROM  org_staff WHERE account_id = '$account_id'");
             $num_rows = mysql_num_rows($result);
             if ($num_rows == 0) {
-               mysql_query("INSERT INTO org_staff (staff_id,account_id,org_name,spclty_type_cd,last_name,
+               mysql_query("INSERT INTO org_staff (staff_id,account_id,ORG_ID ,org_name,spclty_type_cd,last_name,
 					first_name,email_address,work_phone,cell_phone , middle_name , NOTIFICATION_PRE )
-					VALUES (0,'$account_id','$neworg_name',$specialties,'$lastname','$firstname','$email','$work','$cell','$middleName' , '$notify')");
+					VALUES (0,'$account_id', '$org_name', $neworg_name',$specialties,'$lastname','$firstname','$email','$work','$cell','$middleName' , '$notify')");
             } else {
-            mysql_query("UPDATE org_staff SET spclty_type_cd='$specialties', org_name='$neworg_name',
+            mysql_query("UPDATE org_staff SET spclty_type_cd='$specialties', ORG_ID='$org_name' , org_name='$neworg_name',
 				last_name='$lastname',first_name='$firstname',email_address='$email',
 				work_phone='$work',cell_phone='$cell', gender='$gender' , middle_name='$middleName',NOTIFICATION_PRE='$notify'  WHERE account_id = '$account_id'");
             }

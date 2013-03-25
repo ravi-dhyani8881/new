@@ -3,6 +3,18 @@ require_once '../includes/global.inc.php';
 if (!isset($_POST['action'])) { // if page is not submitted to itself echo the form
     include( "header.php");
     ?>
+
+<script type="text/javascript">
+       function getDoctoreDetails(){
+           var docId=$('#doctorname').find("option:selected").val()
+           if(docId!=null){               
+               $.getJSON("checkEmailExist.php?email="+docId+'&method=doctorDetails', function(data) {            			
+                        $('#city').empty().val(data.ADDR_CITY);
+                        $('#state').empty().val(data.ADDR_state_desc);
+                    });
+           }
+       }
+    </script>
     <tr>
         <td style="background-color:white;height:600px;width:300px;vertical-align:middle;">
             <?php
@@ -66,7 +78,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                 <td class="Right">
                                     <p><span class="fltLftSelect">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                        <select name="doctorname" class="selectBox">
+                                        <select name="doctorname" id="doctorname" onchange="getDoctoreDetails();" class="selectBox">
 
                                             <!--
                                             
@@ -113,7 +125,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                         Location:</p></td>
                                 <td class="Right">
                                     <p><span class="fltLftSelect">City:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="text" name="city" size="25" maxlength="25" value="" class="width320"/></p>
+                                        <input type="text" id="city" name="city" size="25" maxlength="25" value="" class="width320"/></p>
                                 </td>
                             </tr>
 
@@ -122,26 +134,10 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                         &nbsp;</p></td>
                                 <td class="Right">
                                     <p><span class="fltLftSelect">State:</span>
-
-                                        <select name="state" class="selectBox">
-
-                                            <!--
-                                            
-                                            <option value="md">MD</option>
-                                            
-                                            <option value="va">VA</option>
-                                            
-                                            <option value="wv">WV</option>
-                                            
-                                            -->
-
-
-
-                                            <?php
-                                            echo $db->getList('rf_state', 'state_cd', 'state_descr', '');
-                                            ?>
-
-                                        </select></p>
+                                        
+                                         <input type="text" id="state" name="state" size="25" maxlength="25" value="" class="width320"/>
+                                        
+                                    </p>
                                 </td>
                             </tr>
                             <tr class="textBoxTable"><td class="Left">

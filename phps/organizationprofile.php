@@ -234,8 +234,8 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                     <p>
                                         Notification Preference:</p></td>
                                 <td class="Right">
-                                    <p>Email&nbsp;&nbsp;&nbsp;<input type="radio" name="notifypref" value="email">
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<input type="radio" name="notifypref" value="text"></p>
+                                    <p>Email&nbsp;&nbsp;&nbsp;<input type="radio" name="notifypref" value="E">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<input type="radio" name="notifypref" value="T"></p>
                                 </td>
                             </tr>
 
@@ -322,7 +322,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
 					VALUES ('$account_id','$street','','','$city','$state','$zipOrg','$work','$cell')");
             } else {
 
-                mysql_query("update address set addr_street1='$street' , addr_city='$city' , zip_cd='$zipOrg' , work_phone='$work' , cell_phone='$cell'    WHERE ADDRESS_ID = '$account_id' ");
+                mysql_query("update address set addr_street1='$street' , addr_city='$city' , addr_state='$state', zip_cd='$zipOrg' , work_phone='$work' , cell_phone='$cell'    WHERE ADDRESS_ID = '$account_id' ");
             }
             mysql_close($con);
             $nextpage = 'organizationprofile.php?msg=update';

@@ -141,6 +141,7 @@ class DB{
             $first_name = $row['first_name'];
             if ($cd == $val)
                 $options.="<option value=\"$cd\" selected>" . $first_name . ' ' . $last_name . "</option>";
+            
             else
                 $options.="<option value=\"$cd\">" . $first_name . ' ' . $last_name . "</option>";
         }

@@ -44,7 +44,29 @@ $finalArray=array("staff_id"=>$row['staff_id'],"patient_id"=>$row['patient_id'],
     );
 
     echo json_encode($finalArray);
-} else {
+}elseif ($method == 'doctorDetails') {    
+    $sql = "SELECT ORG_ID from org_staff where STAFF_ID ='$id'";
+        $result = mysql_query($sql);
+        $row = mysql_fetch_array($result);        
+        $orgId=$row['ORG_ID'];        
+         $sql2 = "SELECT ACCOUNT_ID from organization where ORG_ID ='$orgId'";
+        $result2 = mysql_query($sql2);
+        $row2 = mysql_fetch_array($result2);
+         $account_id=$row2['ACCOUNT_ID'];        
+         $sql3 = "SELECT ADDR_CITY , ADDR_STATE from address where ADDRESS_ID ='$account_id'";
+        $result3 = mysql_query($sql3);
+        $row3 = mysql_fetch_array($result3);
+        $state=$row3['ADDR_STATE'];
+        
+          $sql4 = "SELECT state_descr from rf_state where state_cd ='$state'";
+        $result4 = mysql_query($sql4);
+        $row4 = mysql_fetch_array($result4);
+        $statedesc=$row4['state_descr'];
+        
+        $adressArray=array("ADDR_CITY"=>$row3['ADDR_CITY'] ,"ADDR_state_desc"=>$statedesc );
+    echo json_encode($adressArray);    
+    }
+else {
     echo 'done';
 }
 ?>
