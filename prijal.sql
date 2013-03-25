@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2013 at 05:41 PM
+-- Generation Time: Mar 25, 2013 at 01:02 AM
 -- Server version: 5.5.14
 -- PHP Version: 5.3.5
 
@@ -49,8 +49,8 @@ INSERT INTO `address` (`ADDRESS_ID`, `is_US_ADDRESS`, `ADDR_street1`, `ADDR_stre
 (5, NULL, '567 main street', '', '', 'baltimore', NULL, 'wv', '200-100-3000', '111-222-3333'),
 (6, NULL, '5544 street', '', '', 'boyds', NULL, 'md', '222-444-5555', '111-222-3333'),
 (9, NULL, 'd31 streeet ', '', '', 'germantown', NULL, 'md', '222-111-3333', '333-222-5555'),
-(16, NULL, '11111111', '', '', '111111111111', '33333-3333', 'VA', '(666) 666-6666 x66666', '(444) 444-4444'),
-(84, NULL, 'street', '', '', 'newyork', '22222-2222', 'MD', '(222) 222-2222 x22222', '(222) 222-2222'),
+(16, NULL, '11111111', '', '', 'delhi', '33333-3333', 'VA', '(666) 666-6666 x66666', '(444) 444-4444'),
+(84, NULL, 'street', '', '', 'ooooooooooooooooo', '22222-2222', 'MD', '(000) 000-0000 x00000', '(222) 222-2222'),
 (106, NULL, 'eeeeee', '', '', 'eeeeeeeee', '33333-3333', 'VA', '(333) 333-3333 x33333', '(333) 333-3333');
 
 -- --------------------------------------------------------
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `dr_patient_refrl` (
   KEY `DR_PATIENT_REFRL_FK2` (`RFRNG_STATUS_CD`),
   KEY `DR_PATIENT_REFRL_FK3` (`RFRD_STAFF_ID`),
   KEY `DR_PATIENT_REFRL_FK4` (`RFRD_STATUS_CD`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `dr_patient_refrl`
@@ -145,7 +145,9 @@ INSERT INTO `dr_patient_refrl` (`REFERRAL_ID`, `STAFF_ID`, `PATIENT_ID`, `RFRNG_
 (20, 24, 55, NULL, '2013-03-08 22:52:25', NULL, NULL, NULL, 21, NULL, NULL, NULL, NULL, NULL, NULL, 'none', '', NULL, NULL, NULL),
 (21, 24, 55, NULL, '2013-03-08 22:53:54', NULL, NULL, NULL, 21, NULL, NULL, NULL, NULL, NULL, NULL, 'none', '', NULL, NULL, NULL),
 (22, 24, 55, 2, '2013-03-08 22:55:20', '\r\n love\r\n                                    love\r\n                                    love\r\n                                    love\r\n                                                                       ', '\r\n    \r\n        blove\r\n                                                                ', '\r\n    \r\n    love\r\n                                                                    ', 2, 3, NULL, NULL, NULL, NULL, NULL, 'none', '', NULL, NULL, NULL),
-(23, 24, 55, 7, '2013-03-20 23:26:59', 'tea=st perform                                   ', 'tea=st perform                                   \r\n    \r\n                                    ', 'tea=st perform                                   \r\n    \r\n                                    ', 21, 8, NULL, 'result received\r\n                                        ', 'result received\r\n                                        \r\n                                        ', 'result received\r\n                                        \r\n                                        ', NULL, 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'NULL');
+(23, 24, 55, 7, '2013-03-20 23:26:59', 'tea=st perform                                   ', 'tea=st perform                                   \r\n    \r\n                                    ', 'tea=st perform                                   \r\n    \r\n                                    ', 21, 8, NULL, 'result received\r\n                                        ', 'result received\r\n                                        \r\n                                        ', 'result received\r\n                                        \r\n                                        ', NULL, 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'uploads/Desert.jpg', 'NULL'),
+(24, 21, 52, NULL, '2013-03-24 18:07:38', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 21, 52, 1, '2013-03-24 18:09:10', '\r\n    \r\n                                    ', '\r\n    \r\n                                    ', '\r\n    \r\n                                    ', 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,6 +187,7 @@ CREATE TABLE IF NOT EXISTS `organization` (
   `UPDATED_DTTM` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `UPDATED_BY` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ORG_EMAIL` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NOTIFICATION_PRE` varchar(16) COLLATE utf8_unicode_ci DEFAULT 'E',
   PRIMARY KEY (`ORG_ID`),
   UNIQUE KEY `ORGANIZATION_U1` (`ORG_NAME`),
   KEY `ORGANIZATION_I1` (`ORG_TYPE_CD`),
@@ -195,12 +198,12 @@ CREATE TABLE IF NOT EXISTS `organization` (
 -- Dumping data for table `organization`
 --
 
-INSERT INTO `organization` (`ORG_ID`, `ACCOUNT_ID`, `ORG_NAME`, `ORG_TYPE_CD`, `WEBSITE_URL`, `PARENT_ORG_ID`, `CREATED_DTTM`, `CREATED_BY`, `UPDATED_DTTM`, `UPDATED_BY`, `ORG_EMAIL`) VALUES
-(0, 16, 'yyyyyyyyyyyy', NULL, 'gggg', NULL, '2013-03-10 13:31:24', NULL, '0000-00-00 00:00:00', NULL, 'ssssssss'),
-(9, 64, 'Organization 21', NULL, NULL, NULL, '2012-12-12 08:39:38', NULL, '0000-00-00 00:00:00', NULL, NULL),
-(10, 66, 'New Organization', NULL, NULL, NULL, '2012-12-12 15:45:36', NULL, '0000-00-00 00:00:00', NULL, NULL),
-(19, 84, 'ravi raj', NULL, 'yahoo.com', NULL, '2013-02-10 20:37:38', NULL, '0000-00-00 00:00:00', NULL, 'ravi_happy28@yahoo.co.in'),
-(20, 106, 'eeeddddddddd', NULL, 'eeeeeee', NULL, '2013-03-17 21:38:44', NULL, '0000-00-00 00:00:00', NULL, 'ravi_happy28@yahoo.co.in');
+INSERT INTO `organization` (`ORG_ID`, `ACCOUNT_ID`, `ORG_NAME`, `ORG_TYPE_CD`, `WEBSITE_URL`, `PARENT_ORG_ID`, `CREATED_DTTM`, `CREATED_BY`, `UPDATED_DTTM`, `UPDATED_BY`, `ORG_EMAIL`, `NOTIFICATION_PRE`) VALUES
+(0, 16, 'yyyyyyyyyyyy', NULL, 'gggg', NULL, '2013-03-10 13:31:24', NULL, '0000-00-00 00:00:00', NULL, 'ssssssss', 'E'),
+(9, 64, 'Organization 21', NULL, NULL, NULL, '2012-12-12 08:39:38', NULL, '0000-00-00 00:00:00', NULL, NULL, 'E'),
+(10, 66, 'New Organization', NULL, NULL, NULL, '2012-12-12 15:45:36', NULL, '0000-00-00 00:00:00', NULL, NULL, 'E'),
+(19, 84, 'ravi rajj', NULL, 'yahoo.com', NULL, '2013-03-23 23:42:00', NULL, '0000-00-00 00:00:00', NULL, 'ravi_happy28@yahoo.co.in', 'E'),
+(20, 106, 'eeeddddddddd', NULL, 'eeeeeee', NULL, '2013-03-17 21:38:44', NULL, '0000-00-00 00:00:00', NULL, 'ravi_happy28@yahoo.co.in', 'E');
 
 -- --------------------------------------------------------
 
@@ -274,12 +277,12 @@ CREATE TABLE IF NOT EXISTS `org_staff` (
 --
 
 INSERT INTO `org_staff` (`STAFF_ID`, `ORG_ID`, `ORG_NAME`, `STAFF_TYPE_CD`, `SPCLTY_TYPE_CD`, `SPECIALTY`, `LAST_NAME`, `MIDDLE_NAME`, `FIRST_NAME`, `GENDER`, `EMAIL_ADDRESS`, `WORK_PHONE`, `CELL_PHONE`, `NOTIFICATION_PRE`, `ACCOUNT_ID`) VALUES
-(2, NULL, '4-OrganizationName', NULL, 2, 'skin', 's1LN', 'dhyani', 's1FN', 'F', 'ravi@gmail.com', '(344) 444-4444 x4444', '(122) 222-2222', 'E', 3),
+(2, 10, '4-OrganizationName', NULL, 2, 'skin', 's1LN', 'dhyani', 's1FN', 'F', 'ravi@gmail.com', '(344) 444-4444 x4444', '(122) 222-2222', 'E', 3),
 (10, NULL, '4-OrganizationName', NULL, 3, NULL, 'd71-ln', '', 'd71-fn', '', 'd71test@test.com', '710-111-7777', '017-111-8888', 'E', 34),
 (17, NULL, 'New Organization', NULL, 2, NULL, 'd15-ln', '', 'd15-fn', '', 'd15@test.com', '151-155-5555', '151-212-5555', 'E', 67),
 (18, NULL, 'Doctors Medical Group', NULL, 3, NULL, 'Elizabeth', '', 'Merzer', '', 'emerzer@dmg.com', '202-393-9990', '', 'E', 71),
 (19, NULL, 'Captial Womens Care', NULL, 8, NULL, 'Houser', '', 'Jane', '', 'jhouser@cwc.com', '301-778-0998', '', 'E', 72),
-(21, NULL, 'ravi raj', NULL, 3, NULL, 'doctor', 'ghfghfgh', 'doctor', 'F', 'doctor.doctor@doctor.com', '(122) 977-7777 x77770', '(888) 888-8888', 'E', 83),
+(21, 19, 'ravi rajj', NULL, 3, NULL, 'doctor', 'ghfghfgh', 'doctor', 'F', 'doctor.doctor@doctor.com', '(122) 977-7777 x77770', '(888) 888-8888', 'E', 83),
 (22, NULL, 'yyyyyyyyyyyy', NULL, 2, NULL, 'Ravi', '', 'Rajd', 'M', 'ravi_happy28@yahoo.co.in', '(571) 223-6780 x123', '(987) 237-7777', 'E', 91),
 (23, NULL, '4-OrganizationName', NULL, 4, NULL, 's1', 's1', 's1s1', 'M', 's1@s1.com', '(222) 222-2222 x22222', '(222) 222-2222', 'E', 2),
 (24, NULL, 'yyyyyyyyyyyy', NULL, 3, NULL, 'doctor1', 'doctor1', 'doctor1', 'M', 'doctor1.doctor1@doctor1.com', '(111) 111-1111 x11111', '(111) 111-1111', 'E', 102);
