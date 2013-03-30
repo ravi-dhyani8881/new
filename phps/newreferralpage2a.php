@@ -20,7 +20,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
 
 
 
-    $last_referral_id = $_SESSION['last_referral_id'];
+    $last_referral_id = $_SESSION['staff_account_id'];
 
     echo "last_referral_id $last_referral_id";
 
@@ -66,151 +66,53 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
 
         </td>
 
-        <td style="background-color:white;height:600px;width:900px;text-align:top;">
+        <td style="background-color:white;width:900px;text-align:top;float:left;">
+<table style="margin: 40px 50px 40px;width:800px" cellpadding="0px" cellspacing="0px;" >
+<tr><td >
 
-            <table style="margin:40px;width:800px;position: absolute;
-                   top: 30px;" cellpadding="0px" cellspacing="0px;" >
-
-                <tr><td>
-
-
-
-                        <table class="header" style="width:100%">
-
-                            <tr><td >
-
-
-
-                                    Patient Referral
-
-
+                                    <span class="left-box"></span><span class="cent-box" style="width:758px;">Patient Referral</span><span class="right-box"></span>
 
                                 </td></tr>
-
-                        </table>
-
-                    </td>
-
-                </tr>
 
                 <tr><td>
 
 
 
                         <table class="main" style="width:100%;" >
-
-
-
-                            <tr>
-
-                                <td style="width:20%;  vertical-align:top">
-
-                                    <p class="bold">
-
-                                        Test(s) to Perform:</p> </td><td colspan="3" style="width:80%">
-
-                                    <textarea rows="4" cols="50" name="testtoperform" >
-
-    <?php echo $tests_to_perform_txt; ?>
-
-                                    </textarea>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td  style="width:20%; vertical-align:top">
-
-                                    <p class="bold">
-
-                                        Special Instructions:</p> </td>
-
-                                <td colspan="3" style="width:80%">
-
-                                    <textarea rows="4" cols="50" name="specialinstructions">
-
-    <?php echo $spcl_inst_txt; ?>
-
-                                    </textarea>
-
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Test(s) to Perform:</p></td>
+                                <td class="Right">
+                                    <p><textarea rows="4" class="width320" cols="50" name="testtoperform" ><?php echo $tests_to_perform_txt; ?></textarea></p>
                                 </td>
-
                             </tr>
-
-                            <tr>
-
-                                <td  style="width:20%;  vertical-align:top">
-
-                                    <p class="bold">
-
-                                        Other Comments:</p> </td>
-
-                                <td colspan="3" style="width:80%">
-
-                                    <textarea rows="4" cols="50" name="othercomments">
-
-    <?php echo $other_comments_txt; ?>
-
-                                    </textarea>
-
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Special Instructions:</p></td>
+                                <td class="Right">
+                                    <p><textarea rows="4" cols="50" class="width320" name="specialinstructions"><?php echo $spcl_inst_txt; ?></textarea></p>
                                 </td>
-
                             </tr>
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Other Comments:</p></td>
+                                <td class="Right">
+                                    <p><textarea rows="4" cols="50" class="width320" name="othercomments"><?php echo $other_comments_txt; ?></textarea></p>
+                                </td>
+                            </tr>
+<tr class="textBoxTable">
+                                <td colspan="2" style="float:left;margin-left:220px;">
+                                    <input type="submit" name="action" value="Send Now" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px"/>
+									<input type="submit" name="action" value="Send Later" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px;margin-left:20px;"/>
+									<input type="submit" name="action" value="Cancel" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px;margin-left:20px;"/>
+                                </td></tr>							
 
-
-
-                            <tr>
-
-
-
-                                <td colspan="4" style="width:100%;">
-
-                                    <table style="width:60%;" align="center"><tr>
-
-                                            <td style="width:33%;">
-
-
-
-                                                <p> <input type="submit" name="action" value="Send Now" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px"/>
-
-                                                </p>
-
-                                            </td>
-
-                                            <td style="width:33%;">
-
-
-
-                                                <p> <input type="submit" name="action" value="Send Later" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px"/>
-
-                                                </p>
-
-                                            </td>
-
-                                            <td style="width:33%;">
-
-                                                <p>
-
-                                                    <input type="submit" name="action" value="Cancel" style="background-color: #4682B4;border-radius:5px;height: 35px; width: 100px"/>
-
-                                                </p>
-
-                                            </td>
-
-
-
-                                        </tr>
-
+                           
                                     </table>
-
-                                </td></tr>
-
-
-
-
-
+                                </td>
+                            </tr>
+							
+							
                         </table>
 
 

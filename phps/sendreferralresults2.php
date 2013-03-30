@@ -228,9 +228,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                     <p>
                                         Test(s) to Perform:</p></td>
                                 <td class="Right">
-                                    <p><textarea rows="4" cols="50" id="testtoperform" name="testtoperform" class="width320">
-
-                                        </textarea></p>
+                                    <p><textarea rows="4" cols="50" id="testtoperform" name="testtoperform" class="width320"></textarea></p>
                                 </td>
                             </tr>
                            
@@ -247,9 +245,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                     <p>
                                         Other Comments:</p></td>
                                 <td class="Right">
-                                    <p><textarea rows="4" cols="50" id="othercomment" name="othercomment" class="width320">
-
-                                        </textarea></p>
+                                    <p><textarea rows="4" cols="50" id="othercomment" name="othercomment" class="width320"></textarea></p>
                                 </td>
                             </tr>
                             
@@ -265,18 +261,14 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                     <p>
                                         Test Results:</p></td>
                                 <td class="Right">
-                                    <p><textarea rows="4" cols="50" name="testresults" class="width320">
-
-                                        </textarea></p>
+                                    <p><textarea rows="4" cols="50" name="testresults" class="width320"></textarea></p>
                                 </td>
                             </tr>
                             <tr class="textBoxTable"><td class="Left">
                                     <p>
                                         Interpretations & Comments:</p></td>
                                 <td class="Right">
-                                    <p><textarea rows="4" cols="50" name="intercomments" class="width320">
-
-                                        </textarea></p>
+                                    <p><textarea rows="4" cols="50" name="intercomments" class="width320"></textarea></p>
                                 </td>
                             </tr>
 
@@ -284,9 +276,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                     <p>
                                         Recommended Treatment:</p></td>
                                 <td class="Right">
-                                    <p><textarea rows="4" cols="50" name="treatment" class="width320">
-
-                                        </textarea></p>
+                                    <p><textarea rows="4" cols="50" name="treatment" class="width320"></textarea></p>
                                 </td>
                             </tr>
                             <tr class="textBoxTable"><td class="Left">

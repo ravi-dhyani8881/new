@@ -2,10 +2,10 @@
 <ul>
 <li><a href="patientprofile.php">Profile</a></li>
 <li><a  href="insuranceinfo.php">Insurance Information</a></li>
-<li><a  href="mainp.php" >Family History</a></li>
-<li><a  href="mainp.php" >Allergies Information</a></li>
-<li><a  href="mainp.php" >Test Results</a></li>
-<li><a  href="mainp.php" >Appointments</a></li>
+<li><a  href="featurenotavilablep.php" >Family History</a></li>
+<li><a  href="featurenotavilablep.php" >Allergies Information</a></li>
+<li><a  href="featurenotavilablep.php" >Test Results</a></li>
+<li><a  href="featurenotavilablep.php" >Appointments</a></li>
 </ul>
 </div>
 <?php /*?><table id="navigation" title="Navigation" border="0"

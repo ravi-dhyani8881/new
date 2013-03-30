@@ -23,7 +23,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
 
 
     <tr>
-        <td style="background-color:#F7F7F7;height:600px;width:300px;vertical-align:top; border: 1px solid #C3CFD9; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);">
+        <td style="background-color:white;width:300px;vertical-align:middle; height: 500px;">
             <?php
             
                 include( "navigationd.php");
@@ -38,6 +38,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
             //		$account_id=$_SESSION['dv_account_id'];
             //	}
             $account_id = $_SESSION['patient_account_id'];
+	
             $result = mysql_query("SELECT last_name,first_name,email_address , middle_name ,ADDR_street1 ,
                     ADDR_CITY  , ADDR_STATE ,ZIP_CD , WORK_PHONE , CELL_PHONE , GENDER_REPLACE , NOTIFICATION_PRE , DATE_OF_BIRTH FROM  patient WHERE account_id = '$account_id'");
             $row = mysql_fetch_assoc($result);
@@ -56,53 +57,52 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
             $dateof = $row['DATE_OF_BIRTH'];
             ?>
         </td>
-        <td style="background-color:white;height:600px;width:900px;text-align:top;">
-            <table style="margin:40px;width:800px" cellpadding="0px" cellspacing="0px;" >
-                <tr><td>
+       <td style="background-color:white;width:900px;text-align:top;float:left;">
+<table style="margin: 40px 50px 40px;width:800px" cellpadding="0px" cellspacing="0px;" >
+<tr><td >
 
-                        <table style="float: left;    margin-left: -3px;    width: 104%;">
-                            <tr><td >
-
-                                    <span class="left-box"></span><span class="cent-box" style="width:786px;">Patient Profile Information</span><span class="right-box"></span>
+                                    <span class="left-box"></span><span class="cent-box" style="width:758px;">Patient Profile Information</span><span class="right-box"></span>
 
                                 </td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr><td>
-                        <?php /* ?><div style="hidden"><input type="hidden" name="account_id" value="<?php echo $_REQUEST['account_id']; ?>" /></div>
-                          <?php */ ?>
-                        <table class="main" style="width:100%">
-                            <tr>
-                                <td colspan="4">
-                                    <h1>
-                                        General Information
-                                    </h1>
+<tr><td>
+<input type="hidden" name="account_id" value="<?php echo $_SESSION['staff_account_id'];?>"/>
+<table class="main" style="width:100%">
+<tr class="textBoxTable"><td class="Left">
+                                    <p class="bold">
+                                        General Information</p></td>
+                                <td class="Right">
+                                    <p>&nbsp;</p>
                                 </td>
                             </tr>
-                            <tr><td style="width:18%;  padding-left: 22px;">
-                                    Last Name:</td><td style="width:40%;"> <input type="text" name="lastname" value="<?php echo $lastname; ?>"
-                                                                              size="35" maxlength="35" />
+		<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Last Name:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" name="lastname" value="<?php echo $lastname; ?>"
+                                                                              size="35" maxlength="35" /></p>
                                 </td>
-
-                                <td style="width:10%">
-                                    First Name:
-                                </td> <td style="width:40%"><input type="text" name="firstname" value="<?php echo $firstname; ?>"
-                                                                   size="35" maxlength="35"/>
+                            </tr>					
+             <tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        First Name:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" name="firstname" value="<?php echo $firstname; ?>"
+                                                                   size="35" maxlength="35"/></p>
                                 </td>
-
-                            </tr>
-
-                            <tr><td style="width:18%;  padding-left: 22px;">
-                                    Middle Name:</td><td style="width:40%;"> <input type="text" value="<?php echo $middleName; ?>" name="middlename"
-                                                                                size="35" maxlength="35" />
+                            </tr>           
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Middle Name:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" value="<?php echo $middleName; ?>" name="middlename"
+                                                                                size="35" maxlength="35" /></p>
                                 </td>
-                            </tr>
-                            <tr>
-
-                                <td style="width:18%;  padding-left: 22px;">
-                                    Gender: </td><td colspan="3" style="width:90%">                                    
-                                    <?php
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Gender:</p></td>
+                                <td class="Right">
+                                    <p><?php
                                     if ($row['GENDER_REPLACE'] == 'M') {
                                         echo 'Female&nbsp;&nbsp;&nbsp;<input  type="radio" style="width:0px;" name="gender" id="gender" value="F">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                                         echo 'Male<input type="radio" checked="true" style="width:0px;" name="gender" id="gender" value="M">';
@@ -113,105 +113,97 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                         echo 'Female&nbsp;&nbsp;&nbsp;<input  type="radio" style="width:0px;" name="gender" id="gender" value="F">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                                         echo 'Male<input type="radio"  name="gender" style="width:0px;" id="gender" value="M">';
                                     }
-                                    ?>
+                                    ?></p>
+                                </td>
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Date of Birth:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" name="dob" value="<?php echo $dateof; ?>" id="datepicker"  /></p>
+                                </td>
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p class="bold">
+                                        Address</p></td>
+                                <td class="Right">
+                                    <p>&nbsp;</p>
                                 </td>
                             </tr>
-
-                             <tr>
-                                <td style="width:20% ;  padding-left: 22px;">
-                                    Date of Birth: 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Street:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" name="street" size="75" maxlength="75"
+                                                                                                  value="<?php echo $street; ?>"/></p>
                                 </td>
-
-                                <td style="width:50%">
-                                    <input type="text" name="dob" value="<?php echo $dateof; ?>" id="datepicker"  />
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        City:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" name="city" size="25" maxlength="25" value="<?php echo $city; ?>" /></p>
                                 </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="4">
-                                    <h1>
-                                        Address
-                                    </h1>
-                                </td>
-                            </tr>
-
-                            <tr><td colspan="4">
-
-                                    <table style="width:70%">
-                                        <tr>
-                                            <td style="width:18%;  padding-left: 22px;">
-                                                Street:</td> <td colspan="3" style="width:90%"><input type="text" name="street" size="75" maxlength="75"
-                                                                                                  value="<?php echo $street; ?>"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td style="width:18%;  padding-left: 22px;">
-                                                City:</td>
-                                            <td style="width:40%">
-                                                <input type="text" name="city" size="25" maxlength="25" value="<?php echo $city; ?>"
-                                            </td>
-                                            <td style="width:18%;  padding-left: 22px;">
-                                                State</td>
-                                            <td style="width:40%">
-                                                <select name="state">
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        State:</p></td>
+                                <td class="Right">
+                                    <p><select name="state" class="selectBox">
                                                     <!-- <option value="md">MD</option>
                                                     <option value="va">VA</option>
                                                     <option value="wv">WV</option> -->
                                                     <?php
                                                     echo $db->getList('rf_state', 'state_cd', 'state_descr', $state);
                                                     ?>
-                                                </select>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td style="width:18%;  padding-left: 22px;">
-                                                Zip:</td>
-                                            <td style="width:90%" colspan="3"> <input type="text" id="zip" name="zip" value="<?php echo $zip; ?>"
-                                                                                      />
-                                            </td>
-                                        </tr>
-                                    </table>
+                                                </select></p>
+                                </td>
+                            </tr> 							
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Zip:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" class="width320" id="zip" name="zip" value="<?php echo $zip; ?>"
+                                                                                      /></p>
+                                </td>
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p class="bold">
+                                        Phone Number(s)</p></td>
+                                <td class="Right">
+                                    <p>&nbsp;</p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="4" style="width:100%">
-                                    <h1>
-                                        Phone Number(s)
-                                    </h1>
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Work:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" id="work" name="work" class="width320" value="<?php echo $work; ?>"
+                                                                                    size="15" maxlength="15" /></p>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">
-
-                                    <table style="width:70%">
-                                        <tr>
-                                            <td style="width:18%;  padding-left: 22px;">
-                                                Work:</td> <td style="width:40%"><input type="text" id="work" name="work" style="width: 150px;" value="<?php echo $work; ?>"
-                                                                                    size="15" maxlength="15" />
-                                            </td>
-                                            <td style="width:10%">
-                                                Cell:</td><td style="width:40%"><input type="text" id="cell" name="cell" style="width: 150px;" value="<?php echo $cell; ?>"
-                                                                                   size="15" maxlength="15"/>
-                                            </td>
-                                        </tr>
-                                        <tr><td  style="width:18%;  padding-left: 22px;">
-
-                                                Email:</td> <td colspan="3" style="width:90%"><p><input type="text" name="email" size="75" maxlength="75"
+                            </tr> 
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Cell:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" id="cell" name="cell" class="width320" value="<?php echo $cell; ?>"
+                                                                                   size="15" maxlength="15"/></p>
+                                </td>
+                            </tr> 							
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Email:</p></td>
+                                <td class="Right">
+                                    <p><input type="text" name="email" class="width320" size="75" maxlength="75"
                                                                                                     value="<?php echo $email; ?>"
-                                                                                                    />
-                                                </p>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-
-                                            <td colspan="4" style="width:18%;  padding-left: 22px;">
-                                                Notification Preference:&nbsp;&nbsp;&nbsp;
-                                                
-                                                
-                                                  <?php
+                                                                                                    /></p>
+                                </td>
+                            </tr>
+<tr class="textBoxTable"><td class="Left">
+                                    <p>
+                                        Notification Preference:</p></td>
+                                <td class="Right">
+                                    <p><?php
                                                 if ($row['NOTIFICATION_PRE'] == 'E') {
                                                     echo '&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;<input type="radio" id="notifypref" checked="true" name="notifypref" value="E">';
                                                     echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<input type="radio" id="notifypref" name="notifypref" value="T">';
@@ -222,29 +214,13 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                                                     echo '&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;<input type="radio" id="notifypref" name="notifypref" value="E">';
                                                     echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<input type="radio" id="notifypref" name="notifypref" value="T">';
                                                 }
-                                                ?>
-                                                
-                                            </td>
-                                        </tr>
-                                    </table>
+                                                ?></p>
                                 </td>
                             </tr>
-
-                            <tr>
-
-                                <td colspan="4" style="width:100%;">
-                                    <table style="width:40%;" align="center"><tr>
-                                          
-                                            <td style="width:50%;">
-                                                <p>
-                                                    <input type="submit" name="action" value="Close" style="background-color: #3a6a8e;border-radius:5px;height: 35px; width: 100px"/>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                </td></tr>
-
+	<tr class="textBoxTable">
+                                <td colspan="2" style="float:left;margin-left:220px;">
+                                    <input type="submit" name="action" value="Close" style="background-color: #3a6a8e;border-radius:5px;height: 35px; width: 100px"/>
+                                </td></tr>							
 
                         </table>
 
