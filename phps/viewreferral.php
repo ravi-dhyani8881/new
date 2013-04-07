@@ -13,7 +13,7 @@ if (!isset($_POST['action'])) {
 	 		die('Could not connect: ' . mysql_error());
 			}
 	 	mysql_select_db($_SESSION['databaseName'], $con);
-		$referral_id=$_SESSION['referral_id'];
+		$referral_id=$_GET['refid'];
 	 	$result = mysql_query("SELECT staff_id,patient_id,tests_to_perform_txt , spcl_inst_txt, other_comments_txt FROM dr_patient_refrl WHERE referral_id = '$referral_id'");
 	 	$row = mysql_fetch_assoc($result);
 		$staff_id = $row['staff_id'];
@@ -21,12 +21,12 @@ if (!isset($_POST['action'])) {
 	 	$tests_to_perform_txt = $row['tests_to_perform_txt'];
 	 	$spcl_inst_txt = $row['spcl_inst_txt'];
 		$other_comments_txt = $row['other_comments_txt'];
-		$result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from PATIENT where patient_id = '$patient_id'");
+		$result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from patient where patient_id = '$patient_id'");
 		$patient_row = @mysql_fetch_assoc($result);
 		$last_name = $patient_row['last_name'];
 		$first_name = $patient_row['first_name'];
 		echo "Staff id is $staff_id";
-		$dr_result = mysql_query("SELECT last_name, first_name, org_name from ORG_STAFF where staff_id = '$staff_id'");
+		$dr_result = mysql_query("SELECT last_name, first_name, org_name from org_staff where staff_id = '$staff_id'");
 		$dr_row = @mysql_fetch_assoc($dr_result);
 		$dr_firstName = $dr_row['first_name'];
 		$dr_lastName = $dr_row['last_name'];

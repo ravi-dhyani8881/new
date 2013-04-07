@@ -56,7 +56,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                             <tr><td class="Left">
                                     <p>Referral Type:</p></td>
                                 <td class="Right">
-                                    <p>Practice<input type="radio" name="type" value="practice">&nbsp;&nbsp;&nbsp;Physician<input type="radio" name="type" value="physician">
+                                    <p>Practice<input type="radio" name="type" checked="true" value="practice">&nbsp;&nbsp;&nbsp;Physician<input type="radio" name="type" value="physician">
                                         &nbsp;&nbsp;&nbsp;Dentist<input type="radio" name="type" value="dentist">&nbsp;&nbsp;&nbsp;Hospital<input type="radio" name="type" value="hospital">&nbsp;&nbsp;&nbsp;Nurse<input type="radio" name="type" value="nurse">
                                         &nbsp;&nbsp;&nbsp;Administrator<input type="radio" name="type" value="administrator">&nbsp;&nbsp;&nbsp;Laboratory<input type="radio" name="type" value="laboratory">
                                         &nbsp;&nbsp;&nbsp;Radiology<input type="radio" name="type" value="radiology"></p>

@@ -29,10 +29,10 @@ if ($method == 'checkmail') {
     $patient_id = $row['patient_id'];
     $staff_id = $row['staff_id'];
 
-    $result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from PATIENT where patient_id = '$patient_id'");
+    $result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from patient where patient_id = '$patient_id'");
     $patient_row = mysql_fetch_assoc($result);
 
-    $dr_result = mysql_query("SELECT last_name, first_name, org_name from ORG_STAFF where staff_id = '$staff_id'");
+    $dr_result = mysql_query("SELECT last_name, first_name, org_name from org_staff where staff_id = '$staff_id'");
 
     $dr_row = mysql_fetch_assoc($dr_result);
 

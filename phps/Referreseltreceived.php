@@ -22,8 +22,8 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                 <?php
                 include( "navigationd.php");
 
-                $account_id = $_SESSION['referral_id'];
-                $referral_id = $_SESSION['referral_id'];
+                $account_id = $_GET['refid'];
+                $referral_id = $_GET['refid'];
                 $result = mysql_query("SELECT staff_id,patient_id,tests_to_perform_txt , spcl_inst_txt, other_comments_txt FROM dr_patient_refrl WHERE referral_id = '$referral_id'");
                 $row = mysql_fetch_assoc($result);
                 $staff_id = $row['staff_id'];
@@ -34,7 +34,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
 
                 // get details from the PATIENT table
 
-                $result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from PATIENT where patient_id = '$patient_id'");
+                $result = mysql_query("SELECT last_name,first_name , GENDER_REPLACE , DATE_OF_BIRTH from patient where patient_id = '$patient_id'");
 
                 $patient_row = mysql_fetch_assoc($result);
 
@@ -43,7 +43,7 @@ if (!isset($_POST['action'])) { // if page is not submitted to itself echo the f
                 $first_name = $patient_row['first_name'];
 
 
-                $dr_result = mysql_query("SELECT last_name, first_name, org_name from ORG_STAFF where staff_id = '$staff_id'");
+                $dr_result = mysql_query("SELECT last_name, first_name, org_name from org_staff where staff_id = '$staff_id'");
 
                 $dr_row = mysql_fetch_assoc($dr_result);
 
