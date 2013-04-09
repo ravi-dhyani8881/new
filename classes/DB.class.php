@@ -1,9 +1,9 @@
 <?php
 class DB{
-   private $db_name = 'prijal';
-    private $db_user = 'root';
-    private $db_pass = 'root';
-    private $db_host = 'localhost';
+       private $db_name = 'prijalreferal';
+    private $db_user = 'prijalreferal';
+    private $db_pass = 'Newdelhi@123';
+    private $db_host = 'prijalreferal.db.8106546.hostedresource.com';
     function get_db_name() {
         return $this->db_name;
     }
